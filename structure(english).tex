@@ -1,0 +1,245 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template information：
+% Template name: Ernie's Beamer
+% Version: 1.0 (2023.03.23)
+% Editor: 莊程翔 Ernie Cheng-Xiang Zhuang
+% Complier: XeLaTeX
+%
+% Original Template Information:
+% Template name: Beamer Presentation
+% Author: Vel (vel@latextemplates.com)
+% Complier: XeLaTeX
+% License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+% Download link: https://www.LaTeXTemplates.com
+%
+% The purpose of making this template:
+% Due to the unfriendliness of LaTeX for beginners, I made significant modifications to the template designed by Vel, along with clear and concise comments. I also added many commonly used and useful packages, as well as frequently used customized settings commands, to make it easier for LaTeX beginners to complete professional academic presentations.
+% If you have any questions, you can contact me by:
+% 1. Website: https://www.ernie-zhuang.com/contact
+% 2. Email: erniezhuang1127@gmail.com
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	Packages and Document Configurations
+%----------------------------------------------------------------------------------------
+
+% Specification of custom fonts
+\usepackage{fontspec} 
+
+%% Specified font
+\usefonttheme{serif} % Typeset using the default serif font
+
+% Required for custom colors
+\usepackage{color} 
+
+%% Color section titles
+\definecolor{NTHU_Purple}{RGB}{126,35,138}
+\definecolor{Default_Blue}{RGB}{52,51,171}
+
+% Math tools and symbols
+\usepackage{mathtools, amsmath, amsfonts, amsthm, latexsym} 
+
+% Increase the space between mathematical symbols and make the ones bold
+\usepackage{newtxtext, newtxmath}
+
+% Automatic numbering of figures and tables
+\usepackage[justification=centering]{caption} 
+
+%% Set the automatic numbering
+\setbeamertemplate{caption}[numbered]
+
+%% Set the font size and series of automatic numbering
+\captionsetup[figure]{font=small, labelfont=md}
+\captionsetup[table]{font=small, labelfont=md}
+
+% Packages of tables and figures
+\usepackage{graphicx}  % \scalebox{} can resize a table
+\usepackage{booktabs}
+
+%Arrange multiple figures
+\usepackage{subfigure} 
+
+% Multiple row
+\usepackage{multirow} 
+
+% Array
+\usepackage{array}
+
+% Enumerate
+\usepackage{enumerate} 
+
+% For making a watermark
+\usepackage{tikz}
+
+% References
+\usepackage{natbib}
+
+% Commenting out large sections
+\usepackage{comment}
+
+%----------------------------------------------------------------------------------------
+%	Layout theme (Select one)
+%----------------------------------------------------------------------------------------
+
+\mode<presentation>{
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%----------------------------------------------------------------------------------------
+%	Outer theme (Select one)
+%----------------------------------------------------------------------------------------
+
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+\useoutertheme{smoothbars}
+%\useoutertheme{sidebar}
+%\useoutertheme{split}
+%\useoutertheme{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+%----------------------------------------------------------------------------------------
+%	Custom outer theme
+%----------------------------------------------------------------------------------------
+
+% Set the font color black and background black in headline and footline
+%\setbeamercolor{section in head/foot}{fg=black, bg=white} 
+
+% Cancel the counter of page in sections
+%\setbeamertemplate{mini frames}{}  
+
+% Adjust the font size of headline and footline
+\setbeamerfont{headline}{size=\scriptsize}
+\setbeamerfont{footline}{size=\scriptsize}
+
+% Cancel the page toolbox out
+\setbeamertemplate{navigation symbols}{} 
+
+%% Customization 1: The footline just contains author and page  
+%\setbeamertemplate{footline} 
+%{\leavevmode%
+%\hbox{%
+%\begin{beamercolorbox}[wd=0.5\paperwidth,ht=3ex,dp=1ex,leftskip=3ex]%
+%{author in head/foot}%
+%{\scriptsize\textbf{\insertshortauthor}}%
+%\end{beamercolorbox}%
+%\begin{beamercolorbox}[wd=0.5\paperwidth,ht=3ex,dp=1ex,right]%
+%{author in head/foot}%
+%\scriptsize \textbf{{\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}}} %頁碼控制選項
+%\end{beamercolorbox}%
+%}}
+
+%% Customization 2: Clear the footline but leave the page
+%\setbeamertemplate{footline}[page number] 
+
+%% Customization 3: Clear the ffootline
+%\setbeamertemplate{footline}[] 
+
+%----------------------------------------------------------------------------------------
+%	Color theme (Select one)
+%----------------------------------------------------------------------------------------
+
+\usecolortheme{default}
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%----------------------------------------------------------------------------------------
+%	Custom color theme
+%----------------------------------------------------------------------------------------
+
+% The structure color (You can change the color to fit the represent color of institute or school)
+\setbeamercolor{structure}{fg=NTHU_Purple} 
+
+% Change the color of font and title block in title page
+%\setbeamercolor{title}{bg=green, fg=black} 
+
+% Change the color of font and frametitle block
+%\setbeamercolor{frametitle}{bg=green,fg=black} 
+
+% Change the context color
+%\setbeamercolor{normal text}{fg=orange}
+
+% Change the color of font and the background in the title of block 
+%\setbeamercolor{block title}{bg=blue,fg=yellow} 
+
+% Change the color of font and the background in the body of block 
+%\setbeamercolor{block body}{bg=green,fg=red} 
+
+% Set the color for alerted text
+\setbeamercolor{alerted text}{fg=red} 
+
+%----------------------------------------------------------------------------------------
+%	Inner theme (Select one)
+%----------------------------------------------------------------------------------------
+
+\useinnertheme{rounded} 
+%\useinnertheme{circles} 
+%\useinnertheme{rectangles} 
+%\useinnertheme{inmargin} 
+
+%----------------------------------------------------------------------------------------
+%	Custom item color
+%----------------------------------------------------------------------------------------
+
+%\setbeamercolor{item projected}{bg=red}
+
+%----------------------------------------------------------------------------------------
+%	Custom the margin of slides
+%----------------------------------------------------------------------------------------
+
+\setbeamersize{text margin left=0.8cm, text margin right=0.8cm}
+\special{papersize=\the\paperwidth,\the\paperheight}
+\providecommand{\tabularnewline}{\\}
+}
+
+%----------------------------------------------------------------------------------------
+%	Custom the background
+%----------------------------------------------------------------------------------------
+
+% Add background picture
+%\setbeamertemplate{background}{\includegraphics[height=\paperheight]{Fig/Background.png}}
+
+% Set the watermark
+\usebackgroundtemplate{%
+	\tikz[overlay, remember picture] % Show the logo at every page
+	\node[opacity=0.3, below=-1.25cm, at=(current page.center)] % Adjust the opacity and position
+	{\includegraphics[scale = 0.14]{Fig/nthulogo.png}}; % input the logo and change size
+	}
